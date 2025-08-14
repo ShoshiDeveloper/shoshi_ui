@@ -17,6 +17,7 @@ export 'src/theme/theme.dart';
 export 'src/utils/color_utils.dart';
 export 'src/widgets/button/button.dart';
 export 'src/widgets/button/button_style.dart';
+export 'src/widgets/input/input.dart';
 export 'src/widgets/skeleton.dart';
 export 'src/widgets/toggle/toggle.dart';
 export 'src/widgets/toggle/toggle_style.dart';
