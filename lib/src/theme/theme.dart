@@ -2,13 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:shoshi_ui/shoshi_ui.dart';
 
 class SThemeData {
-  SThemeData({final SButtonStyle? button, final STextStyles? textStyles})
-    : buttonStyle = button ?? SButtonStyle.defaults,
-      textStyles = textStyles ?? STextStyles.defaults;
+  SThemeData({
+    //colors
+    final SServiceColors? serviceColors,
+    final SBGColors? bgColors,
+    final STextColors? textColors,
+    //widgets
+    final SButtonStyle? button,
+    final STextStyles? textStyles,
+    final SToggleStyle? toggleStyle,
+  }) : serviceColors = SServiceColors.defaults,
+       bgColors = SBGColors.defaults,
+       textColors = STextColors.defaults,
+       //widgets
+       buttonStyle = button ?? SButtonStyle.defaults,
+       textStyles = textStyles ?? STextStyles.defaults,
+       toggleStyle = SToggleStyle.defaults(serviceColors ?? SServiceColors.defaults);
 
+  //colors
+  final SServiceColors serviceColors;
+  final SBGColors bgColors;
+  final STextColors textColors;
+
+  //widgets
   final SButtonStyle buttonStyle;
-
   final STextStyles textStyles;
+  final SToggleStyle toggleStyle;
 }
 
 class STheme extends StatelessWidget {
