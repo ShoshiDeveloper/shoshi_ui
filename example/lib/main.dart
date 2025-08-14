@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:example/demo/pages/button_demo.dart';
+import 'package:example/demo/pages/toggle_demo.dart';
 import 'package:example/demo/utils/context.dart';
 import 'package:flutter/material.dart';
 import 'package:shoshi_ui/shoshi_ui.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-final Map<String, Widget> pages = {'Button': ButtonDemo()};
+final Map<String, Widget> pages = {'Button': ButtonDemo(), 'Toggle': ToggleDemo()};
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
