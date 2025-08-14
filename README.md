@@ -10,9 +10,12 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 - Quick integration into existing projects.
 - Regular updates with new widgets and enhancements.
 
+## ✨ Implemented Widgets (Examples)
+
+- `Button` - with three variants: primary, secondary, text.
+
 ## 🔮 Upcoming Widgets
 
-- Button
 - Input
 - BottomSheet
 - Selector

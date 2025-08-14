@@ -11,8 +11,10 @@ class DemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: STheme.of(context).bgColors.primary,
       appBar: AppBar(
         leading: IconButton(onPressed: context.pop, icon: Icon(Icons.chevron_left_rounded)),
+        backgroundColor: STheme.of(context).bgColors.primary,
         title: Text(title),
         centerTitle: true,
       ),

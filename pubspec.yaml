@@ -10,12 +10,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  index_generator: ^4.1.0
   skeletonizer: ^2.1.0+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  index_generator: ^4.1.0
   flutter_lints: ^5.0.0
 
 
