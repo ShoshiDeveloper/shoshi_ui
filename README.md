@@ -29,7 +29,7 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 
 ```yaml
 dependencies:
-  my_flutter_ui_kit: ^0.1.0
+  shoshi_ui: ^0.0.3
 ```
 
 <!-- ## 📝 Пример использования -->
