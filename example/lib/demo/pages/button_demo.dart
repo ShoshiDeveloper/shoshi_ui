@@ -29,11 +29,11 @@ class ButtonDemo extends StatelessWidget {
         ),
         DemoHeader('With infinity width'),
         DemoSection(
-          title: DemoTitle('Primary', number: 4),
+          title: DemoTitle('Primary', number: 1),
           demo: SButton('Button', infinityWidth: true, onTap: () => context.showSnackbar('onTap')),
         ),
         DemoSection(
-          title: DemoTitle('Secondary', number: 5),
+          title: DemoTitle('Secondary', number: 2),
           demo: SButton.secondary(
             'Button',
             infinityWidth: true,
