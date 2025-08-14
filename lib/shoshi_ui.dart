@@ -18,5 +18,5 @@ export 'src/utils/color_utils.dart';
 export 'src/widgets/button/button.dart';
 export 'src/widgets/button/button_style.dart';
 export 'src/widgets/skeleton.dart';
-export 'src/widgets/switch/switch.dart';
-export 'src/widgets/switch/switch_style.dart';
+export 'src/widgets/toggle/toggle.dart';
+export 'src/widgets/toggle/toggle_style.dart';
