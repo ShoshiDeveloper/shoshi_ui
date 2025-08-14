@@ -10,7 +10,7 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 - Quick integration into existing projects.
 - Regular updates with new widgets and enhancements.
 
-## 🔮 Перспективные виджеты
+## 🔮 Upcoming Widgets
 
 - Button
 - Input
@@ -22,7 +22,7 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 - SectionsList
 - Steps
 
-## 📦 Установка
+## 📦 Installation
 
 ```yaml
 dependencies:
