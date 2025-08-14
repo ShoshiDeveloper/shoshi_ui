@@ -1,7 +1,7 @@
 name: shoshi_ui
 description: "ShoshiUI - a modern, lightweight, and easy-to-use UI kit for Flutter, designed to speed up building beautiful interfaces in your projects. Perfect for personal projects as well as team development."
 version: 0.0.1
-homepage: shoshi.tech
+homepage: https://shoshi.tech
 
 environment:
   sdk: ^3.8.1
