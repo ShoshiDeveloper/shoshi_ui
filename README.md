@@ -13,6 +13,7 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 ## ✨ Implemented Widgets (Examples)
 
 - `Button` - with three variants: primary, secondary, text.
+- `Toggle`
 
 ## 🔮 Upcoming Widgets
 
@@ -20,7 +21,6 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 - BottomSheet
 - Selector
 - Alert
-- Switch
 - Checkbox
 - SectionsList
 - Steps
