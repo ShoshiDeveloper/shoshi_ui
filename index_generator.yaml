@@ -1,0 +1,22 @@
+# Automatically generate index / barrel files with all the exports needed for library.
+
+# Install: dart pub global activate index_generator
+# Usage terminal: dart pub global run index_generator
+# Usage in VSCode: Command+Shift+B -> Run index_generator
+
+index_generator:
+  page_width: 100
+  exclude:
+    - '**.g.dart'
+    - '**.freezed.dart'
+    - '{_,**/_}*.dart'
+
+  libraries:
+    - directory_path: lib
+      include:
+        - 'src/**'
+      name: ''
+      file_name: shoshi_ui
+      disclaimer: true # Disable/Enable the generated code disclaimer
+      exclude:
+      exports:
