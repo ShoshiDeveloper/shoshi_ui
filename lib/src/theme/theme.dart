@@ -16,7 +16,8 @@ class SThemeData {
        textColors = STextColors.defaults,
        //widgets
        buttonStyle = button ?? SButtonStyle.defaults,
-       textStyles = textStyles ?? STextStyles.defaults,
+       textStyles =
+           textStyles ?? STextStyles.defaults((textColors ?? STextColors.defaults).primary),
        toggleStyle = SToggleStyle.defaults(serviceColors ?? SServiceColors.defaults);
 
   //colors

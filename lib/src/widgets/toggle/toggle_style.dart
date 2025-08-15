@@ -9,7 +9,7 @@ class SToggleStyle {
     required this.handleDisabled,
   });
 
-  static SToggleStyle defaults(final SServiceColors serviceColors) => SToggleStyle(
+  factory SToggleStyle.defaults(final SServiceColors serviceColors) => SToggleStyle(
     bgEnabled: DualStateStyle(serviceColors.primary, hex('E9E9E9')),
     handleEnabled: DualStateStyle(hex('FFFFFF'), hex('FFFFFF')),
     bgDisabled: DualStateStyle(hex('C2C2C2'), hex('C2C2C2')),
