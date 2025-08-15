@@ -14,10 +14,10 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 
 - `Button` - with three variants: primary, secondary, text.
 - `Toggle`
+- `Input`
 
 ## 🔮 Upcoming Widgets
 
-- Input
 - BottomSheet
 - Selector
 - Alert

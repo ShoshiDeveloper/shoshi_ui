@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:example/demo/pages/alert_demo.dart';
 import 'package:example/demo/pages/button_demo.dart';
 import 'package:example/demo/pages/input_deno.dart';
 import 'package:example/demo/pages/toggle_demo.dart';
@@ -33,6 +34,7 @@ final Map<String, Widget> pages = {
   'Button': ButtonDemo(),
   'Toggle': ToggleDemo(),
   'Input': InputDemo(),
+  'Alert': AlertDemo(),
 };
 
 class HomePage extends StatelessWidget {
