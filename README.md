@@ -15,12 +15,12 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 - `Button` - with three variants: primary, secondary, text.
 - `Toggle`
 - `Input`
+- `Alert` - with four variants: info, danger, warning, success.
 
 ## 🔮 Upcoming Widgets
 
 - BottomSheet
 - Selector
-- Alert
 - Checkbox
 - SectionsList
 - Steps
