@@ -3,6 +3,13 @@ ShoshiUI — a modern, lightweight, and easy-to-use UI kit for Flutter, designed
 ## 🔹 Overview
 ShoshiUI provides a collection of customizable widgets that help accelerate development and maintain a consistent, polished UI.
 
+## 🔗 Useful Links
+
+- [Documentation](https://shoshi.tech/shoshi_ui/documentation/)  
+- [Pub.dev page](https://pub.dev/packages/shoshi_ui)  
+- [GitHub repository](https://github.com/shoshideveloper/shoshi_ui)  
+- [Issue tracker](https://github.com/shoshideveloper/shoshi_ui/issues)  
+
 ## 🚀 Features
 
 - Clean and modern design, production-ready.
@@ -29,7 +36,7 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 
 ```yaml
 dependencies:
-  shoshi_ui: ^0.0.3
+  shoshi_ui: ^0.0.4
 ```
 
 <!-- ## 📝 Пример использования -->
