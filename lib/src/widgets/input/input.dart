@@ -20,8 +20,8 @@ class SInput extends StatefulWidget {
 
   final TextEditingController? controller;
 
-  final IconData? prefix;
-  final IconData? suffix;
+  final SIconData? prefix;
+  final SIconData? suffix;
   final VoidCallback? onTapSuffix;
   final String? hint;
 
@@ -81,64 +81,60 @@ class _SInputState extends State<SInput> {
                         child: Row(
                           spacing: SSpacings.s08,
                           children: [
+                            if (widget.prefix != null)
+                              SIcon(icon: widget.prefix!, color: textColors.primary, size: 16),
+                            ListenableBuilder(
+                              listenable: focus,
+                              builder: (_, final child) {
+                                return ValueListenableBuilder(
+                                  valueListenable: controller,
+                                  builder: (_, final value, _) =>
+                                      widget.hint != null && value.text.isEmpty && !focus.hasFocus
+                                      ? Text(
+                                          widget.hint!,
+                                          style: STheme.of(
+                                            context,
+                                          ).textStyles.body(color: textColors.secondary),
+                                        )
+                                      : SizedBox.shrink(),
+                                );
+                              },
+                            ),
                             Expanded(
-                              child: Row(
-                                children: [
-                                  if (widget.prefix != null) Icon(widget.prefix),
-                                  ListenableBuilder(
-                                    listenable: focus,
-                                    builder: (_, final child) {
-                                      return ValueListenableBuilder(
-                                        valueListenable: controller,
-                                        builder: (_, final value, _) =>
-                                            widget.hint != null &&
-                                                value.text.isEmpty &&
-                                                !focus.hasFocus
-                                            ? Text(
-                                                widget.hint!,
-                                                style: STheme.of(
-                                                  context,
-                                                ).textStyles.body(color: textColors.secondary),
-                                              )
-                                            : SizedBox.shrink(),
-                                      );
-                                    },
-                                  ),
-                                  Expanded(
-                                    child: EditableText(
-                                      onTapUpOutside: (_) {
-                                        FocusScope.of(context).unfocus();
-                                        widget.onSubmitted?.call(controller.text);
-                                        field.didChange(controller.text);
-                                        if (widget.isAutoValidate) {
-                                          Form.maybeOf(context)?.validate();
-                                        }
-                                      },
-                                      controller: controller,
-                                      focusNode: focus,
-                                      minLines: widget.minLines,
-                                      maxLines: widget.maxLines,
-                                      style: STheme.of(
-                                        context,
-                                      ).textStyles.body(color: textColors.primary),
-                                      cursorColor: STheme.of(context).textColors.primary,
-                                      backgroundCursorColor: Colors.transparent,
-                                      obscureText: widget.obscureText,
-                                      onSubmitted: (final value) {
-                                        widget.onSubmitted?.call(value);
-                                        field.didChange(controller.text);
-                                        if (widget.isAutoValidate) field.didChange(value);
-                                      },
-                                    ),
-                                  ),
-                                ],
+                              child: EditableText(
+                                onTapUpOutside: (_) {
+                                  FocusScope.of(context).unfocus();
+                                  widget.onSubmitted?.call(controller.text);
+                                  field.didChange(controller.text);
+                                  if (widget.isAutoValidate) {
+                                    Form.maybeOf(context)?.validate();
+                                  }
+                                },
+                                controller: controller,
+                                focusNode: focus,
+                                minLines: widget.minLines,
+                                maxLines: widget.maxLines,
+                                style: STheme.of(
+                                  context,
+                                ).textStyles.body(color: textColors.primary),
+                                cursorColor: STheme.of(context).textColors.primary,
+                                backgroundCursorColor: Colors.transparent,
+                                obscureText: widget.obscureText,
+                                onSubmitted: (final value) {
+                                  widget.onSubmitted?.call(value);
+                                  field.didChange(controller.text);
+                                  if (widget.isAutoValidate) field.didChange(value);
+                                },
                               ),
                             ),
                           ],
                         ),
                       ),
                       if (widget.suffix != null)
-                        GestureDetector(onTap: widget.onTapSuffix, child: Icon(widget.suffix)),
+                        GestureDetector(
+                          onTap: widget.onTapSuffix,
+                          child: SIcon(icon: widget.suffix!, color: textColors.primary, size: 16),
+                        ),
                     ],
                   ),
                 ),

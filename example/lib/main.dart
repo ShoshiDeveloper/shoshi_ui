@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:example/demo/full_pages/login_demo.dart';
 import 'package:example/demo/pages/alert_demo.dart';
 import 'package:example/demo/pages/bottom_sheet_demo.dart';
 import 'package:example/demo/pages/button_demo.dart';
@@ -31,16 +32,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
-final Map<String, Widget> pages = {
-  'Button': ButtonDemo(),
-  'Toggle': ToggleDemo(),
-  'Input': InputDemo(),
-  'Alert': AlertDemo(),
-  'BottomSheet': BottomSheetDemo(),
-};
-
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final Map<String, Widget> pages = {
+    'Button': ButtonDemo(),
+    'Toggle': ToggleDemo(),
+    'Input': InputDemo(),
+    'Alert': AlertDemo(),
+    'BottomSheet': BottomSheetDemo(),
+    'LoginDemo': LoginDemo(),
+  };
 
   @override
   Widget build(BuildContext context) {
