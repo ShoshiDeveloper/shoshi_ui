@@ -17,6 +17,7 @@ export 'src/theme/text_styles.dart';
 export 'src/theme/theme.dart';
 export 'src/utils/color_utils.dart';
 export 'src/widgets/alert/alert.dart';
+export 'src/widgets/bottom_sheet/bottom_sheet.dart';
 export 'src/widgets/button/button.dart';
 export 'src/widgets/button/button_style.dart';
 export 'src/widgets/icon.dart';
