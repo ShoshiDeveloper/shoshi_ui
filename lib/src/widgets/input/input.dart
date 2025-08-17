@@ -6,6 +6,7 @@ class SInput extends StatefulWidget {
     this.controller,
     this.prefix,
     this.suffix,
+    this.hint,
     this.onTapSuffix,
     this.obscureText = false,
     this.isAutoValidate = true,
@@ -22,6 +23,7 @@ class SInput extends StatefulWidget {
   final IconData? prefix;
   final IconData? suffix;
   final VoidCallback? onTapSuffix;
+  final String? hint;
 
   final bool obscureText;
   final bool isAutoValidate;
@@ -39,7 +41,7 @@ class SInput extends StatefulWidget {
 
 class _SInputState extends State<SInput> {
   final focus = FocusNode();
-  late final controller = widget.controller ?? TextEditingController(text: 'zalupa');
+  late final controller = widget.controller ?? TextEditingController();
 
   @override
   void dispose() {
@@ -89,9 +91,11 @@ class _SInputState extends State<SInput> {
                                       return ValueListenableBuilder(
                                         valueListenable: controller,
                                         builder: (_, final value, _) =>
-                                            value.text.isEmpty && !focus.hasFocus
+                                            widget.hint != null &&
+                                                value.text.isEmpty &&
+                                                !focus.hasFocus
                                             ? Text(
-                                                'hint',
+                                                widget.hint!,
                                                 style: STheme.of(
                                                   context,
                                                 ).textStyles.body(color: textColors.secondary),
@@ -106,16 +110,17 @@ class _SInputState extends State<SInput> {
                                         FocusScope.of(context).unfocus();
                                         widget.onSubmitted?.call(controller.text);
                                         field.didChange(controller.text);
-                                        if (widget.isAutoValidate)
+                                        if (widget.isAutoValidate) {
                                           Form.maybeOf(context)?.validate();
+                                        }
                                       },
                                       controller: controller,
                                       focusNode: focus,
                                       minLines: widget.minLines,
                                       maxLines: widget.maxLines,
-                                      style: STheme.of(context).textStyles
-                                          .body(color: textColors.primary)
-                                          .copyWith(height: 1),
+                                      style: STheme.of(
+                                        context,
+                                      ).textStyles.body(color: textColors.primary),
                                       cursorColor: STheme.of(context).textColors.primary,
                                       backgroundCursorColor: Colors.transparent,
                                       obscureText: widget.obscureText,
