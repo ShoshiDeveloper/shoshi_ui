@@ -27,7 +27,7 @@ class _InputDemoState extends State<InputDemo> {
           demo: Form(
             child: SInput(
               controller: controller,
-              suffix: Icons.close,
+              // suffix: SIcons.close,
               onSubmitted: context.showSnackbar,
               onTapSuffix: () {
                 context.showSnackbar('onTapSuffix');
@@ -42,7 +42,7 @@ class _InputDemoState extends State<InputDemo> {
           demo: Form(
             child: SInput(
               controller: controller,
-              suffix: Icons.close,
+              // suffix: Icons.close,
               onSubmitted: context.showSnackbar,
               validator: (value) => value != '0000' ? 'Error text' : null,
               onTapSuffix: () {
@@ -57,7 +57,7 @@ class _InputDemoState extends State<InputDemo> {
           demo: Form(
             child: SInput(
               controller: controller,
-              suffix: Icons.close,
+              // suffix: Icons.close,
               isDisabled: true,
               onSubmitted: context.showSnackbar,
               onTapSuffix: () {
