@@ -10,11 +10,9 @@ class SScaffold extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    final theme = STheme.of(context);
-
     return Scaffold(
       appBar: appBar,
-      backgroundColor: theme.bgColors.primary,
+      backgroundColor: context.theme.bgColors.primary,
       body: SafeArea(
         child: Padding(padding: EdgeInsets.all(SSpacings.s16), child: body),
       ),

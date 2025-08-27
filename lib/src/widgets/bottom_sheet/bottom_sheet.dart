@@ -9,7 +9,6 @@ class SBottomSheetHeader extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    final theme = STheme.of(context);
     return Padding(
       padding: const EdgeInsets.only(top: SSpacings.s08),
       child: Column(
@@ -20,11 +19,12 @@ class SBottomSheetHeader extends StatelessWidget {
             width: 32,
             height: 4,
             decoration: BoxDecoration(
-              color: theme.textColors.tertiary,
+              color: context.theme.textColors.tertiary,
               borderRadius: BorderRadius.circular(SRadii.max),
             ),
           ),
-          if (title != null) Text(title!, style: theme.textStyles.t1(weight: FontWeight.w600)),
+          if (title != null)
+            Text(title!, style: context.theme.textStyles.t1(weight: FontWeight.w600)),
         ],
       ),
     );
@@ -61,14 +61,12 @@ class _SBottomSheetNotScrollable extends SBottomSheet {
 
   @override
   Widget build(final BuildContext context) {
-    final theme = STheme.of(context);
-
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
       child: Container(
         padding: EdgeInsets.only(right: SSpacings.s16, left: SSpacings.s16, bottom: SSpacings.s32),
         decoration: BoxDecoration(
-          color: theme.bgColors.primary,
+          color: context.theme.bgColors.primary,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(SRadii.s16),
             topRight: Radius.circular(SRadii.s16),
@@ -100,14 +98,12 @@ class _SBottomSheetScrollable extends SBottomSheet {
 
   @override
   Widget build(final BuildContext context) {
-    final theme = STheme.of(context);
-
     return DraggableScrollableSheet(
       expand: false,
       builder: (final context, final scrollController) => Container(
         padding: EdgeInsets.only(right: SSpacings.s16, left: SSpacings.s16, bottom: SSpacings.s32),
         decoration: BoxDecoration(
-          color: theme.bgColors.primary,
+          color: context.theme.bgColors.primary,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(SRadii.s16),
             topRight: Radius.circular(SRadii.s16),

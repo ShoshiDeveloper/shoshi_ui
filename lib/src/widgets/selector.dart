@@ -21,8 +21,6 @@ class SSelector<T> extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    final theme = STheme.of(context);
-
     return GestureDetector(
       onTap: () => showModalBottomSheet(
         context: context,
@@ -55,7 +53,7 @@ class SSelector<T> extends StatelessWidget {
         children: [
           Text(
             stringify?.call(value) ?? value.toString(),
-            style: theme.textStyles.body(color: theme.textColors.secondary),
+            style: context.theme.textStyles.body(color: context.theme.textColors.secondary),
           ),
           SIcon(icon: SIconsOutlined.rightChevron, size: 16),
         ],

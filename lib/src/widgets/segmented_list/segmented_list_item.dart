@@ -10,7 +10,7 @@ class SSgmentedListItem extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    final theme = STheme.of(context);
+    // final theme = context.theme;
 
     return GestureDetector(
       onTap: onTap,
@@ -20,7 +20,11 @@ class SSgmentedListItem extends StatelessWidget {
           spacing: SSpacings.s08,
           children: [
             Expanded(
-              child: Text(title, style: theme.textStyles.body(), overflow: TextOverflow.ellipsis),
+              child: Text(
+                title,
+                style: context.theme.textStyles.body(),
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             ?suffix,
           ],

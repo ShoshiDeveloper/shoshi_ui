@@ -8,6 +8,7 @@ export 'src/consts/interaction_builder_states.dart';
 export 'src/consts/radii.dart';
 export 'src/consts/spacings.dart';
 export 'src/extension/color_x.dart';
+export 'src/extension/context_x.dart';
 export 'src/theme/colors/bg_colors.dart';
 export 'src/theme/colors/service_colors.dart';
 export 'src/theme/colors/text_colors.dart';

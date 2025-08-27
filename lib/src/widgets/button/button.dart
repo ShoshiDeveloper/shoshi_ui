@@ -43,7 +43,7 @@ class SButton extends StatelessWidget {
   Widget build(final BuildContext context) {
     if (isLoading) return SSkeleton(width: 120);
 
-    final style = STheme.of(context).buttonStyle;
+    final style = context.theme.buttonStyle;
 
     return SInteractionBuilder(
       onTap: onTap,
@@ -56,7 +56,7 @@ class SButton extends StatelessWidget {
         );
 
         if (variant == SButtonVariant.text) {
-          return Text(text, style: STheme.of(context).textStyles.textButton(color: color));
+          return Text(text, style: context.theme.textStyles.textButton(color: color));
         }
 
         return Container(

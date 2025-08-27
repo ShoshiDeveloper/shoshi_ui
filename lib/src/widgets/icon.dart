@@ -41,14 +41,13 @@ class SIcon extends StatelessWidget {
   Widget build(final BuildContext context) {
     final svgString = icon?.getSvg;
     if (svgString == null) return SizedBox.shrink();
-    final theme = STheme.of(context);
 
     return SizedBox(
       height: size,
       width: size,
       child: SvgPicture.string(
         svgString,
-        colorFilter: ColorFilter.mode(color ?? theme.textColors.primary, BlendMode.srcIn),
+        colorFilter: ColorFilter.mode(color ?? context.theme.textColors.primary, BlendMode.srcIn),
         height: size,
         width: size,
       ),

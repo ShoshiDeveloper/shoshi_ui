@@ -52,9 +52,9 @@ class _SInputState extends State<SInput> {
 
   @override
   Widget build(final BuildContext context) {
-    final serviceColors = STheme.of(context).serviceColors;
-    final bgColors = STheme.of(context).bgColors;
-    final textColors = STheme.of(context).textColors;
+    final serviceColors = context.theme.serviceColors;
+    final bgColors = context.theme.bgColors;
+    final textColors = context.theme.textColors;
 
     return IgnorePointer(
       ignoring: widget.isDisabled,
@@ -92,9 +92,9 @@ class _SInputState extends State<SInput> {
                                       widget.hint != null && value.text.isEmpty && !focus.hasFocus
                                       ? Text(
                                           widget.hint!,
-                                          style: STheme.of(
-                                            context,
-                                          ).textStyles.body(color: textColors.secondary),
+                                          style: context.theme.textStyles.body(
+                                            color: textColors.secondary,
+                                          ),
                                         )
                                       : SizedBox.shrink(),
                                 );
@@ -114,10 +114,8 @@ class _SInputState extends State<SInput> {
                                 focusNode: focus,
                                 minLines: widget.minLines,
                                 maxLines: widget.maxLines,
-                                style: STheme.of(
-                                  context,
-                                ).textStyles.body(color: textColors.primary),
-                                cursorColor: STheme.of(context).textColors.primary,
+                                style: context.theme.textStyles.body(color: textColors.primary),
+                                cursorColor: context.theme.textColors.primary,
                                 backgroundCursorColor: Colors.transparent,
                                 obscureText: widget.obscureText,
                                 onSubmitted: (final value) {
@@ -143,7 +141,7 @@ class _SInputState extends State<SInput> {
                     field.errorText!,
                     style: STheme.of(
                       context,
-                    ).textStyles.caption(color: STheme.of(context).serviceColors.danger),
+                    ).textStyles.caption(color: context.theme.serviceColors.danger),
                   ),
               ],
             ),

@@ -11,14 +11,13 @@ class SThemeData {
     final SButtonStyle? button,
     final STextStyles? textStyles,
     final SToggleStyle? toggleStyle,
-  }) : serviceColors = SServiceColors.defaults,
-       bgColors = SBGColors.defaults,
-       textColors = STextColors.defaults,
+  }) : serviceColors = serviceColors ?? SServiceColors(),
+       bgColors = bgColors ?? SBGColors(),
+       textColors = textColors ?? STextColors(),
        //widgets
-       buttonStyle = button ?? SButtonStyle.defaults,
-       textStyles =
-           textStyles ?? STextStyles.defaults((textColors ?? STextColors.defaults).primary),
-       toggleStyle = SToggleStyle.defaults(serviceColors ?? SServiceColors.defaults);
+       buttonStyle = button ?? SButtonStyle(),
+       textStyles = textStyles ?? STextStyles.defaults((textColors ?? STextColors()).primary),
+       toggleStyle = SToggleStyle.defaults(serviceColors ?? SServiceColors());
 
   //colors
   final SServiceColors serviceColors;

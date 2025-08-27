@@ -31,7 +31,7 @@ class SAlert extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    final theme = STheme.of(context);
+    final theme = context.theme;
 
     final color = status.when(
       onInfo: () => theme.serviceColors.primary,
