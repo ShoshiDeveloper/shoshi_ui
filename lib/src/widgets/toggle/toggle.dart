@@ -19,14 +19,14 @@ class SToggle extends StatefulWidget {
 class _SToggleState extends State<SToggle> {
   late final style = STheme.of(context).toggleStyle;
 
-  late final notifier = ValueNotifier<bool>(widget.value);
+  // late final notifier = ValueNotifier<bool>(widget.value);
 
   @override
   void didUpdateWidget(final SToggle oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (notifier.value != widget.value) {
-      notifier.value = widget.value;
-    }
+    // if (notifier.value != widget.value) {
+    //   notifier.value = widget.value;
+    // }
   }
 
   @override
@@ -35,37 +35,34 @@ class _SToggleState extends State<SToggle> {
       onTap: widget.isDisabled
           ? null
           : () {
-              notifier.value = !notifier.value;
-              widget.onChanged?.call(notifier.value);
+              // notifier.value = !notifier.value;
+              widget.onChanged?.call(!widget.value);
             },
-      child: ValueListenableBuilder(
-        valueListenable: notifier,
-        builder: (_, final value, _) {
-          return Container(
-            width: 42,
-            height: 26,
-            padding: EdgeInsets.all(2),
+      child: Container(
+        width: 42,
+        height: 26,
+        padding: EdgeInsets.all(2),
+        decoration: BoxDecoration(
+          color: widget.isDisabled
+              ? style.bgDisabled.of(widget.value)
+              : style.bgEnabled.of(widget.value),
+          borderRadius: BorderRadius.circular(SRadii.max),
+        ),
+        child: AnimatedAlign(
+          alignment: widget.value ? Alignment.centerRight : Alignment.centerLeft,
+          duration: Duration(milliseconds: 100),
+          curve: Curves.easeIn,
+          child: Container(
             decoration: BoxDecoration(
-              color: widget.isDisabled ? style.bgDisabled.of(value) : style.bgEnabled.of(value),
+              color: widget.isDisabled
+                  ? style.handleDisabled.of(widget.value)
+                  : style.handleEnabled.of(widget.value),
               borderRadius: BorderRadius.circular(SRadii.max),
             ),
-            child: AnimatedAlign(
-              alignment: value ? Alignment.centerRight : Alignment.centerLeft,
-              duration: Duration(milliseconds: 100),
-              curve: Curves.easeIn,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: widget.isDisabled
-                      ? style.handleDisabled.of(value)
-                      : style.handleEnabled.of(value),
-                  borderRadius: BorderRadius.circular(SRadii.max),
-                ),
-                height: 22,
-                width: 22,
-              ),
-            ),
-          );
-        },
+            height: 22,
+            width: 22,
+          ),
+        ),
       ),
     );
   }
