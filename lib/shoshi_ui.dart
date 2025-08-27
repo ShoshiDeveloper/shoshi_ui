@@ -24,6 +24,7 @@ export 'src/widgets/button/button_style.dart';
 export 'src/widgets/icon.dart';
 export 'src/widgets/input/input.dart';
 export 'src/widgets/scaffold/scaffold.dart';
+export 'src/widgets/selector.dart';
 export 'src/widgets/skeleton.dart';
 export 'src/widgets/toggle/toggle.dart';
 export 'src/widgets/toggle/toggle_style.dart';

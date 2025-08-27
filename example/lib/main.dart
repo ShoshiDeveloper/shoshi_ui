@@ -5,6 +5,7 @@ import 'package:example/demo/pages/alert_demo.dart';
 import 'package:example/demo/pages/bottom_sheet_demo.dart';
 import 'package:example/demo/pages/button_demo.dart';
 import 'package:example/demo/pages/input_deno.dart';
+import 'package:example/demo/pages/selector_demo.dart';
 import 'package:example/demo/pages/toggle_demo.dart';
 import 'package:example/demo/utils/context.dart';
 import 'package:flutter/material.dart';
@@ -47,6 +48,7 @@ class _HomePageState extends State<HomePage> {
     'Alert': AlertDemo(),
     'BottomSheet': BottomSheetDemo(),
     'LoginDemo': LoginDemo(),
+    'Selector': SelectorDemo(),
   };
 
   @override
