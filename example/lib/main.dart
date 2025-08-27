@@ -5,6 +5,7 @@ import 'package:example/demo/pages/alert_demo.dart';
 import 'package:example/demo/pages/bottom_sheet_demo.dart';
 import 'package:example/demo/pages/button_demo.dart';
 import 'package:example/demo/pages/input_deno.dart';
+import 'package:example/demo/pages/segmented_list_demo.dart';
 import 'package:example/demo/pages/selector_demo.dart';
 import 'package:example/demo/pages/toggle_demo.dart';
 import 'package:example/demo/utils/context.dart';
@@ -49,6 +50,7 @@ class _HomePageState extends State<HomePage> {
     'BottomSheet': BottomSheetDemo(),
     'LoginDemo': LoginDemo(),
     'Selector': SelectorDemo(),
+    'SegmentedList': SegmentedListDemo(),
   };
 
   @override
