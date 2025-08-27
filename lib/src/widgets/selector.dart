@@ -55,7 +55,7 @@ class SSelector<T> extends StatelessWidget {
             stringify?.call(value) ?? value.toString(),
             style: context.theme.textStyles.body(color: context.theme.textColors.secondary),
           ),
-          SIcon(icon: SIconsOutlined.rightChevron, size: 16),
+          SIcon(icon: SIconsOutlined.downChevron, size: 16),
         ],
       ),
     );
