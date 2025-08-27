@@ -72,7 +72,7 @@ class _SInputState extends State<SInput> {
                   padding: EdgeInsets.symmetric(horizontal: SSpacings.s16, vertical: SSpacings.s12),
                   decoration: BoxDecoration(
                     color: field.hasError ? serviceColors.danger.light : bgColors.secondary,
-                    borderRadius: BorderRadius.circular(SRadii.s12),
+                    borderRadius: BorderRadius.circular(SRadii.s08),
                   ),
                   child: Row(
                     spacing: SSpacings.s16,
@@ -83,46 +83,57 @@ class _SInputState extends State<SInput> {
                           children: [
                             if (widget.prefix != null)
                               SIcon(icon: widget.prefix!, color: textColors.primary, size: 16),
-                            ListenableBuilder(
-                              listenable: focus,
-                              builder: (_, final child) {
-                                return ValueListenableBuilder(
-                                  valueListenable: controller,
-                                  builder: (_, final value, _) =>
-                                      widget.hint != null && value.text.isEmpty && !focus.hasFocus
-                                      ? Text(
-                                          widget.hint!,
-                                          style: context.theme.textStyles.body(
-                                            color: textColors.secondary,
-                                          ),
-                                        )
-                                      : SizedBox.shrink(),
-                                );
-                              },
-                            ),
                             Expanded(
-                              child: EditableText(
-                                onTapUpOutside: (_) {
-                                  FocusScope.of(context).unfocus();
-                                  widget.onSubmitted?.call(controller.text);
-                                  field.didChange(controller.text);
-                                  if (widget.isAutoValidate) {
-                                    Form.maybeOf(context)?.validate();
-                                  }
-                                },
-                                controller: controller,
-                                focusNode: focus,
-                                minLines: widget.minLines,
-                                maxLines: widget.maxLines,
-                                style: context.theme.textStyles.body(color: textColors.primary),
-                                cursorColor: context.theme.textColors.primary,
-                                backgroundCursorColor: Colors.transparent,
-                                obscureText: widget.obscureText,
-                                onSubmitted: (final value) {
-                                  widget.onSubmitted?.call(value);
-                                  field.didChange(controller.text);
-                                  if (widget.isAutoValidate) field.didChange(value);
-                                },
+                              child: Row(
+                                children: [
+                                  ListenableBuilder(
+                                    listenable: focus,
+                                    builder: (_, final child) {
+                                      return ValueListenableBuilder(
+                                        valueListenable: controller,
+                                        builder: (_, final value, _) =>
+                                            widget.hint != null &&
+                                                value.text.isEmpty &&
+                                                !focus.hasFocus
+                                            ? Text(
+                                                widget.hint!,
+                                                style: context.theme.textStyles.body(
+                                                  color: textColors.secondary,
+                                                ),
+                                              )
+                                            : SizedBox.shrink(),
+                                      );
+                                    },
+                                  ),
+                                  Expanded(
+                                    child: EditableText(
+                                      onTapUpOutside: (_) {
+                                        FocusScope.of(context).unfocus();
+                                        widget.onSubmitted?.call(controller.text);
+                                        field.didChange(controller.text);
+                                        if (widget.isAutoValidate) {
+                                          Form.maybeOf(context)?.validate();
+                                        }
+                                      },
+                                      controller: controller,
+                                      focusNode: focus,
+                                      minLines: widget.minLines,
+                                      maxLines: widget.maxLines,
+                                      style: context.theme.textStyles.body(
+                                        color: textColors.primary,
+                                      ),
+                                      cursorColor: context.theme.textColors.primary,
+                                      backgroundCursorColor: Colors.transparent,
+                                      scrollPadding: EdgeInsets.zero,
+                                      obscureText: widget.obscureText,
+                                      onSubmitted: (final value) {
+                                        widget.onSubmitted?.call(value);
+                                        field.didChange(controller.text);
+                                        if (widget.isAutoValidate) field.didChange(value);
+                                      },
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
