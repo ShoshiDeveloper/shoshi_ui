@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shoshi_ui/shoshi_ui.dart';
+import 'package:shoshi_ui/src/widgets/checkbox.dart';
 
 class SSgmentedListItem extends StatelessWidget {
-  const SSgmentedListItem({required this.title, this.suffix, this.onTap, super.key});
+  const SSgmentedListItem({
+    required this.title,
+    this.suffix,
+    this.onTap,
+    super.key,
+  });
 
   final String title;
   final SSgmentedListItemSuffix? suffix;
@@ -10,8 +16,6 @@ class SSgmentedListItem extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    // final theme = context.theme;
-
     return GestureDetector(
       onTap: onTap,
       child: Padding(
@@ -35,6 +39,11 @@ class SSgmentedListItem extends StatelessWidget {
 }
 
 sealed class SSgmentedListItemSuffix extends StatelessWidget {
+  const factory SSgmentedListItemSuffix.checkbox({
+    required final bool value,
+    final ValueChanged<bool>? onChanged,
+  }) = _SLISuffixCheckbox;
+
   const SSgmentedListItemSuffix._();
 
   const factory SSgmentedListItemSuffix.toggle({
@@ -58,11 +67,19 @@ sealed class SSgmentedListItemSuffix extends StatelessWidget {
     stringify: stringify,
     title: title,
   );
+
+  static SSgmentedListItemSuffix icon({
+    required final SIconData icon,
+    final Color? color,
+  }) => _SLISuffixIcon(icon: icon, color: color);
 }
 
 final class _SLISuffixToggle extends SSgmentedListItemSuffix {
-  const _SLISuffixToggle({required this.value, this.isDisabled = false, this.onChanged})
-    : super._();
+  const _SLISuffixToggle({
+    required this.value,
+    this.isDisabled = false,
+    this.onChanged,
+  }) : super._();
 
   final bool value;
 
@@ -70,7 +87,8 @@ final class _SLISuffixToggle extends SSgmentedListItemSuffix {
 
   final bool isDisabled;
   @override
-  Widget build(_) => SToggle(value: value, isDisabled: isDisabled, onChanged: onChanged);
+  Widget build(_) =>
+      SToggle(value: value, isDisabled: isDisabled, onChanged: onChanged);
 }
 
 final class _SLISuffixPush extends SSgmentedListItemSuffix {
@@ -105,4 +123,24 @@ final class _SLISuffixSelector<T> extends SSgmentedListItemSuffix {
     stringify: stringify,
     title: title,
   );
+}
+
+final class _SLISuffixCheckbox extends SSgmentedListItemSuffix {
+  const _SLISuffixCheckbox({required this.value, this.onChanged}) : super._();
+
+  final bool value;
+  final ValueChanged<bool>? onChanged;
+
+  @override
+  Widget build(_) => SCheckbox(value: value, onChanged: onChanged);
+}
+
+final class _SLISuffixIcon extends SSgmentedListItemSuffix {
+  const _SLISuffixIcon({required this.icon, this.color}) : super._();
+
+  final SIconData icon;
+  final Color? color;
+
+  @override
+  Widget build(_) => SIcon(icon: icon, color: color);
 }

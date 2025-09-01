@@ -14,6 +14,8 @@ class _SegmentedListDemoState extends State<SegmentedListDemo> {
 
   late var currItem = list.first;
   bool value = false;
+  bool firstC = true;
+  bool secondC = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,10 @@ class _SegmentedListDemoState extends State<SegmentedListDemo> {
         SSegmentedList(
           children: [
             SSgmentedListItem(title: 'Label'),
-            SSgmentedListItem(title: 'Go to next', suffix: SSgmentedListItemSuffix.push()),
+            SSgmentedListItem(
+              title: 'Go to next',
+              suffix: SSgmentedListItemSuffix.push(),
+            ),
             SSgmentedListItem(
               title: 'Select variant',
               suffix: SSgmentedListItemSuffix.selector(
@@ -41,6 +46,20 @@ class _SegmentedListDemoState extends State<SegmentedListDemo> {
                 onChanged: (value) => setState(() {
                   this.value = value;
                 }),
+              ),
+            ),
+            SSgmentedListItem(
+              title: 'Radio true',
+              suffix: SSgmentedListItemSuffix.checkbox(
+                value: firstC,
+                onChanged: (value) => setState(() => firstC = value),
+              ),
+            ),
+            SSgmentedListItem(
+              title: 'Radio false',
+              suffix: SSgmentedListItemSuffix.checkbox(
+                value: secondC,
+                onChanged: (value) => setState(() => secondC = value),
               ),
             ),
           ],

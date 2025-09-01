@@ -20,7 +20,7 @@ enum SIconsOutlined implements SIconData {
   downChevron,
   leftChevron,
   rightChevron,
-  exit,
+  close,
   check,
   plus;
 

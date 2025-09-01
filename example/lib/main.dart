@@ -4,9 +4,11 @@ import 'package:example/demo/full_pages/login_demo.dart';
 import 'package:example/demo/pages/alert_demo.dart';
 import 'package:example/demo/pages/bottom_sheet_demo.dart';
 import 'package:example/demo/pages/button_demo.dart';
+import 'package:example/demo/pages/chip_demo.dart';
 import 'package:example/demo/pages/input_deno.dart';
 import 'package:example/demo/pages/segmented_list_demo.dart';
 import 'package:example/demo/pages/selector_demo.dart';
+import 'package:example/demo/pages/tag_demo.dart';
 import 'package:example/demo/pages/toggle_demo.dart';
 import 'package:flutter/material.dart';
 import 'package:shoshi_ui/shoshi_ui.dart';
@@ -26,7 +28,9 @@ class MyApp extends StatelessWidget {
       data: SThemeData(),
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
         home: HomePage(),
       ),
     );
@@ -50,6 +54,8 @@ class _HomePageState extends State<HomePage> {
     'LoginDemo': LoginDemo(),
     'Selector': SelectorDemo(),
     'SegmentedList': SegmentedListDemo(),
+    'Chip': ChipDemo(),
+    'Tag': TagDemo(),
   };
 
   @override
@@ -65,10 +71,15 @@ class _HomePageState extends State<HomePage> {
                   behavior: HitTestBehavior.translucent,
                   onTap: () => context.push(e.value),
                   child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: SSpacings.s12),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: SSpacings.s12,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [SButton.text(e.key), Icon(Icons.chevron_right_rounded)],
+                      children: [
+                        SButton.text(e.key),
+                        Icon(Icons.chevron_right_rounded),
+                      ],
                     ),
                   ),
                 ),

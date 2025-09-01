@@ -40,6 +40,12 @@ class SSelector<T> extends StatelessWidget {
                         Navigator.pop(context);
                       },
                       title: stringify?.call(e) ?? e.toString(),
+                      suffix: value == e
+                          ? SSgmentedListItemSuffix.icon(
+                              icon: SIconsOutlined.check,
+                              color: context.theme.serviceColors.primary,
+                            )
+                          : null,
                     ),
                   )
                   .toList(),
@@ -47,16 +53,30 @@ class SSelector<T> extends StatelessWidget {
           ],
         ),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        spacing: SSpacings.s04,
-        children: [
-          Text(
-            stringify?.call(value) ?? value.toString(),
-            style: context.theme.textStyles.body(color: context.theme.textColors.secondary),
+      child: Center(
+        child: Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: SSpacings.s16,
+            vertical: SSpacings.s04,
           ),
-          SIcon(icon: SIconsOutlined.downChevron, size: 16),
-        ],
+          decoration: BoxDecoration(
+            color: context.theme.bgColors.secondary,
+            borderRadius: BorderRadius.circular(SRadii.max),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            spacing: SSpacings.s08,
+            children: [
+              Text(
+                stringify?.call(value) ?? value.toString(),
+                style: context.theme.textStyles.body(
+                  color: context.theme.textColors.secondary,
+                ),
+              ),
+              SIcon(icon: SIconsOutlined.downChevron, size: 16),
+            ],
+          ),
+        ),
       ),
     );
   }
