@@ -20,7 +20,7 @@ class _LoginDemoState extends State<LoginDemo> {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: SSpacings.s24,
         children: [
-          Text('Welcom', style: theme.textStyles.h1(weight: FontWeight.w700)),
+          Text('Welcome', style: theme.textStyles.h1(weight: FontWeight.w700)),
           Form(
             key: formKey,
             onChanged: () {
@@ -35,7 +35,8 @@ class _LoginDemoState extends State<LoginDemo> {
                   hint: 'Password',
                   isAutoValidate: false,
                   obscureText: true,
-                  validator: (value) => value != '1234' ? 'Wrong password' : null,
+                  validator: (value) =>
+                      value != '1234' ? 'Wrong password' : null,
                 ),
                 SButton.text('Forgot password'),
               ],
@@ -45,7 +46,11 @@ class _LoginDemoState extends State<LoginDemo> {
           Column(
             spacing: SSpacings.s08,
             children: [
-              SButton('Login', infinityWidth: true, onTap: () => formKey.currentState?.validate()),
+              SButton(
+                'Login',
+                infinityWidth: true,
+                onTap: () => formKey.currentState?.validate(),
+              ),
               SButton.text('Create account'),
             ],
           ),
