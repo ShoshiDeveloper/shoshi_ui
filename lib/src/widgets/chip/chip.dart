@@ -10,12 +10,14 @@ class SChip extends StatelessWidget {
     required this.text,
     this.selectedVariant = SChipSelectedVariant.monochrome,
     this.onChanged,
+    this.icon,
     super.key,
   });
 
   final bool isSelected;
   final SChipSelectedVariant selectedVariant;
   final String text;
+  final SIconData? icon;
 
   final ValueChanged<bool>? onChanged;
 
@@ -25,6 +27,7 @@ class SChip extends StatelessWidget {
       text: text,
       selectedVariant: selectedVariant,
       onChanged: onChanged ?? this.onChanged,
+      icon: icon,
       key: key,
     );
   }
@@ -35,7 +38,7 @@ class SChip extends StatelessWidget {
       onTap: () => onChanged?.call(!isSelected),
       child: Container(
         padding: const EdgeInsets.symmetric(
-          horizontal: SSpacings.s16,
+          horizontal: SSpacings.s08,
           vertical: SSpacings.s04,
         ),
         decoration: BoxDecoration(
@@ -54,12 +57,14 @@ class SChip extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           spacing: SSpacings.s08,
           children: [
-            SIcon.filled(
-              icon: SIconsFilled.dangerTriangle,
-              color: isSelected
-                  ? context.theme.textColors.inversePrimary
-                  : context.theme.textColors.primary,
-            ),
+            if (icon != null)
+              SIcon(
+                icon: icon!,
+                color: isSelected
+                    ? context.theme.textColors.inversePrimary
+                    : context.theme.textColors.primary,
+                size: 16,
+              ),
             Text(
               text,
               style: context.theme.textStyles.body2(
