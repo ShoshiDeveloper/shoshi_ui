@@ -22,6 +22,7 @@ export 'src/widgets/app_bar/app_bar.dart';
 export 'src/widgets/bottom_sheet/bottom_sheet.dart';
 export 'src/widgets/button/button.dart';
 export 'src/widgets/button/button_style.dart';
+export 'src/widgets/chip/chip.dart';
 export 'src/widgets/icon.dart';
 export 'src/widgets/input/input.dart';
 export 'src/widgets/scaffold/scaffold.dart';
