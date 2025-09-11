@@ -8,12 +8,18 @@ class SAppBarTrailing {
 }
 
 class SAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const SAppBar({super.key, this.leading, this.onTapLeading, this.title, this.trailing});
+  const SAppBar({super.key, this.leading, this.onTapLeading, this.title, this.trailing})
+    : isPop = false;
+  const SAppBar.pop({super.key, this.leading, this.title, this.trailing})
+    : onTapLeading = null,
+      isPop = true;
 
   final SIconData? leading;
   final VoidCallback? onTapLeading;
   final String? title;
   final List<SAppBarTrailing>? trailing;
+
+  final bool isPop;
 
   @override
   Widget build(final BuildContext context) {
@@ -28,10 +34,10 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
             Container(
               width: 56,
               alignment: Alignment.centerLeft,
-              child: leading != null
+              child: leading != null || isPop
                   ? GestureDetector(
-                      onTap: onTapLeading,
-                      child: SIcon(icon: leading!),
+                      onTap: isPop ? context.pop : onTapLeading,
+                      child: SIcon(icon: leading ?? SIconsOutlined.leftChevron),
                     )
                   : null,
             ),

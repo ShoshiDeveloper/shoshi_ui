@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:example/demo/full_pages/home_edit_demo.dart';
 import 'package:example/demo/full_pages/login_demo.dart';
 import 'package:example/demo/pages/alert_demo.dart';
 import 'package:example/demo/pages/bottom_sheet_demo.dart';
@@ -49,11 +50,12 @@ class _HomePageState extends State<HomePage> {
     'Input': InputDemo(),
     'Alert': AlertDemo(),
     'BottomSheet': BottomSheetDemo(),
-    'LoginDemo': LoginDemo(),
     'Selector': SelectorDemo(),
     'SegmentedList': SegmentedListDemo(),
     'Chip': ChipDemo(),
     'Tag': TagDemo(),
+    'LoginDemo': LoginDemo(),
+    'Info About Home Demo': InfoAboutHomeDemo(),
   };
 
   @override

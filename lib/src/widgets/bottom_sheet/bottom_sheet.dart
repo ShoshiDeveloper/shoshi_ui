@@ -44,6 +44,7 @@ sealed class SBottomSheet extends StatelessWidget {
     final SBottomSheetHeader header,
     final Widget? bottom,
   }) = _SBottomSheetNotScrollable;
+
   const factory SBottomSheet.scrollable({
     required final List<Widget> children,
     final SBottomSheetHeader header,
