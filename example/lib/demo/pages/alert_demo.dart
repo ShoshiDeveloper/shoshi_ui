@@ -16,7 +16,10 @@ class AlertDemo extends StatelessWidget {
       title: 'Alert',
       children: [
         DemoHeader('Default'),
-        DemoSection(title: DemoTitle('Info', number: 1), demo: SAlert(text, SAlertStatus.info)),
+        DemoSection(
+          title: DemoTitle('Info', number: 1),
+          demo: SAlert(text, SAlertStatus.info, icon: SIconsOutlined.check),
+        ),
         DemoSection(
           title: DemoTitle('Warning', number: 1),
           demo: SAlert(text, SAlertStatus.warning),

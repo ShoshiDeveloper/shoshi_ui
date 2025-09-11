@@ -20,73 +20,69 @@ enum SAlertStatus {
     SAlertStatus.warning => onWarning.call(),
     SAlertStatus.success => onSuccess.call(),
   };
+
+  SIconData get defIcon => switch (this) {
+    SAlertStatus.info => SIconsOutlined.check,
+    SAlertStatus.danger => SIconsFilled.dangerTriangle,
+    SAlertStatus.warning => SIconsFilled.shieldWarning,
+    SAlertStatus.success => SIconsFilled.success,
+  };
 }
 
 class SAlert extends StatelessWidget {
-  const SAlert(this.text, this.status, {this.icon, super.key});
+  const SAlert(this.text, this.status, {this.icon, this.hasBorder = false, super.key});
 
   final String text;
   final SAlertStatus status;
-  final SIconsFilled? icon;
+  final SIconData? icon;
+  final bool hasBorder;
 
   @override
   Widget build(final BuildContext context) {
     final theme = context.theme;
 
     final color = status.when(
-      onInfo: () => theme.serviceColors.primary,
+      onInfo: () => theme.textColors.primary,
       onDanger: () => theme.serviceColors.danger,
       onWarning: () => theme.serviceColors.warning,
       onSuccess: () => theme.serviceColors.success,
+    );
+    final bgColor = status.when(
+      onInfo: () => theme.textColors.primary.light,
+      onDanger: () => theme.serviceColors.danger.light,
+      onWarning: () => theme.serviceColors.warning.light,
+      onSuccess: () => theme.serviceColors.success.light,
     );
 
     return Container(
       padding: EdgeInsets.all(1),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [color, theme.bgColors.secondary]),
+        // gradient: LinearGradient(colors: [color, theme.bgColors.secondary]),
         borderRadius: BorderRadius.circular(SRadii.s08),
       ),
       child: Container(
         padding: EdgeInsets.all(SSpacings.s08),
         decoration: BoxDecoration(
-          color: theme.bgColors.primary,
+          color: bgColor,
           borderRadius: BorderRadius.circular(SRadii.s08),
+          border: hasBorder ? Border.all(color: color, width: 0.75) : null,
         ),
-        child: IntrinsicHeight(
-          child: Row(
-            spacing: SSpacings.s08,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                constraints: BoxConstraints(minWidth: 4),
-                padding: EdgeInsets.all(2),
-                decoration: BoxDecoration(
-                  color: color,
-                  borderRadius: BorderRadius.circular(SRadii.s04),
-                ),
-                child: icon != null
-                    ? Center(
-                        child: SIcon.filled(
-                          icon: icon!,
-                          size: 16,
-                          color: theme.textColors.inversePrimary,
-                        ),
-                      )
-                    : null,
+        child: Row(
+          spacing: SSpacings.s08,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: SIcon(icon: icon ?? status.defIcon, size: 20, color: color),
+            ),
+            Expanded(
+              child: Text(
+                text,
+                style: theme.textStyles.body2(color: color),
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
               ),
-              Expanded(
-                child: Text(
-                  text,
-                  style: theme.textStyles.body2(
-                    color: theme.textColors.primary,
-                    weight: FontWeight.w500,
-                  ),
-                  maxLines: 5,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
