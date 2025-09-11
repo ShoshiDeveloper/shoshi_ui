@@ -64,7 +64,7 @@ class SButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: SSpacings.s32, vertical: SSpacings.s12),
           decoration: BoxDecoration(
             color: variant == SButtonVariant.primary ? color : color.withOpacity(0.25),
-            borderRadius: BorderRadius.circular(SRadii.s12),
+            borderRadius: BorderRadius.circular(SRadii.s16),
           ),
           alignment: infinityWidth ? Alignment.center : null,
           child: Text(

@@ -72,7 +72,7 @@ class _SInputState extends State<SInput> {
                   padding: EdgeInsets.symmetric(horizontal: SSpacings.s16, vertical: SSpacings.s12),
                   decoration: BoxDecoration(
                     color: field.hasError ? serviceColors.danger.light : bgColors.secondary,
-                    borderRadius: BorderRadius.circular(SRadii.s08),
+                    borderRadius: BorderRadius.circular(SRadii.s12),
                   ),
                   child: Row(
                     spacing: SSpacings.s16,
