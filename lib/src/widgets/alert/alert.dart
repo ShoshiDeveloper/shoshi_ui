@@ -42,13 +42,13 @@ class SAlert extends StatelessWidget {
     final theme = context.theme;
 
     final color = status.when(
-      onInfo: () => theme.textColors.primary,
+      onInfo: () => theme.serviceColors.primary,
       onDanger: () => theme.serviceColors.danger,
       onWarning: () => theme.serviceColors.warning,
       onSuccess: () => theme.serviceColors.success,
     );
     final bgColor = status.when(
-      onInfo: () => theme.textColors.primary.light,
+      onInfo: () => theme.serviceColors.primary.light,
       onDanger: () => theme.serviceColors.danger.light,
       onWarning: () => theme.serviceColors.warning.light,
       onSuccess: () => theme.serviceColors.success.light,
