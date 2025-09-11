@@ -58,34 +58,31 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Home')),
-      body: Padding(
-        padding: EdgeInsetsGeometry.all(16),
-        child: Column(
-          children: pages.entries
-              .map(
-                (final e) => GestureDetector(
-                  onTap: () => context.push(e.value),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: SSpacings.s12),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            e.key,
-                            style: context.theme.textStyles.body(weight: FontWeight.w500),
-                          ),
+    return SScaffold(
+      appBar: SAppBar(title: 'Home'),
+      body: Column(
+        children: pages.entries
+            .map(
+              (final e) => GestureDetector(
+                onTap: () => context.push(e.value),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: SSpacings.s12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          e.key,
+                          style: context.theme.textStyles.body(weight: FontWeight.w500),
                         ),
-                        Icon(Icons.chevron_right_rounded),
-                      ],
-                    ),
+                      ),
+                      Icon(Icons.chevron_right_rounded),
+                    ],
                   ),
                 ),
-              )
-              .toList(),
-        ),
+              ),
+            )
+            .toList(),
       ),
     );
   }
