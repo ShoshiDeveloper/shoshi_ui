@@ -44,7 +44,7 @@ class STag extends StatelessWidget {
           ),
           Text(
             text,
-            style: context.theme.textStyles.caption(
+            style: context.theme.textStyles.body2(
               weight: FontWeight.w500,
               color: contentColors,
             ),
