@@ -28,9 +28,7 @@ class MyApp extends StatelessWidget {
       data: SThemeData(),
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        ),
+        theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
         home: HomePage(),
       ),
     );
@@ -68,16 +66,18 @@ class _HomePageState extends State<HomePage> {
           children: pages.entries
               .map(
                 (final e) => GestureDetector(
-                  behavior: HitTestBehavior.translucent,
                   onTap: () => context.push(e.value),
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: SSpacings.s12,
-                    ),
+                    padding: const EdgeInsets.symmetric(vertical: SSpacings.s12),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SButton.text(e.key),
+                        Expanded(
+                          child: Text(
+                            e.key,
+                            style: context.theme.textStyles.body(weight: FontWeight.w500),
+                          ),
+                        ),
                         Icon(Icons.chevron_right_rounded),
                       ],
                     ),

@@ -35,8 +35,7 @@ class _LoginDemoState extends State<LoginDemo> {
                   hint: 'Password',
                   isAutoValidate: false,
                   obscureText: true,
-                  validator: (value) =>
-                      value != '1234' ? 'Wrong password' : null,
+                  validator: (value) => value != '1234' ? 'Wrong password' : null,
                 ),
                 SButton.text('Forgot password'),
               ],
@@ -46,11 +45,7 @@ class _LoginDemoState extends State<LoginDemo> {
           Column(
             spacing: SSpacings.s08,
             children: [
-              SButton(
-                'Login',
-                infinityWidth: true,
-                onTap: () => formKey.currentState?.validate(),
-              ),
+              SButton('Login', infinityWidth: true, onTap: () => formKey.currentState?.validate()),
               SButton.text('Create account'),
             ],
           ),
