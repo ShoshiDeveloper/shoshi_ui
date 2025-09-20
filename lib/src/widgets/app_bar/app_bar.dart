@@ -26,7 +26,7 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
     return SafeArea(
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-        color: context.theme.bgColors.primary,
+        color: context.theme.colors.bgColors.primary,
         child: Row(
           spacing: SSpacings.s08,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -48,7 +48,7 @@ class SSelector<T> extends StatelessWidget {
                         suffix: value == e
                             ? SSgmentedListItemSuffix.icon(
                                 icon: SIconsOutlined.check,
-                                color: context.theme.serviceColors.primary,
+                                color: context.theme.colors.serviceColors.primary,
                               )
                             : null,
                       ),
@@ -62,7 +62,7 @@ class SSelector<T> extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: SSpacings.s16, vertical: SSpacings.s04),
             decoration: BoxDecoration(
-              color: context.theme.bgColors.secondary,
+              color: context.theme.colors.bgColors.secondary,
               borderRadius: BorderRadius.circular(SRadii.max),
             ),
             child: Row(
@@ -71,7 +71,9 @@ class SSelector<T> extends StatelessWidget {
               children: [
                 Text(
                   stringify?.call(value) ?? value.toString(),
-                  style: context.theme.textStyles.body(color: context.theme.textColors.secondary),
+                  style: context.theme.textStyles.body(
+                    color: context.theme.colors.textColors.secondary,
+                  ),
                 ),
                 SIcon(icon: SIconsOutlined.downChevron, size: 16),
               ],

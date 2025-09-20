@@ -52,9 +52,9 @@ class _SInputState extends State<SInput> {
 
   @override
   Widget build(final BuildContext context) {
-    final serviceColors = context.theme.serviceColors;
-    final bgColors = context.theme.bgColors;
-    final textColors = context.theme.textColors;
+    final serviceColors = context.theme.colors.serviceColors;
+    final bgColors = context.theme.colors.bgColors;
+    final textColors = context.theme.colors.textColors;
 
     return IgnorePointer(
       ignoring: widget.isDisabled,
@@ -122,7 +122,7 @@ class _SInputState extends State<SInput> {
                                       style: context.theme.textStyles.body(
                                         color: textColors.primary,
                                       ),
-                                      cursorColor: context.theme.textColors.primary,
+                                      cursorColor: context.theme.colors.textColors.primary,
                                       backgroundCursorColor: Colors.transparent,
                                       scrollPadding: EdgeInsets.zero,
                                       obscureText: widget.obscureText,
@@ -152,7 +152,7 @@ class _SInputState extends State<SInput> {
                     field.errorText!,
                     style: STheme.of(
                       context,
-                    ).textStyles.caption(color: context.theme.serviceColors.danger),
+                    ).textStyles.caption(color: context.theme.colors.serviceColors.danger),
                   ),
               ],
             ),

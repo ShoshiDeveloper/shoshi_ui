@@ -16,6 +16,7 @@ export 'src/theme/helpers/dual_state_style.dart';
 export 'src/theme/helpers/interaction_state_style.dart';
 export 'src/theme/text_styles.dart';
 export 'src/theme/theme.dart';
+export 'src/theme/theme_data.dart';
 export 'src/utils/color_utils.dart';
 export 'src/utils/form_validator.dart';
 export 'src/widgets/alert/alert.dart';

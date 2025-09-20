@@ -19,7 +19,7 @@ class SBottomSheetHeader extends StatelessWidget {
             width: 32,
             height: 4,
             decoration: BoxDecoration(
-              color: context.theme.textColors.tertiary,
+              color: context.theme.colors.textColors.tertiary,
               borderRadius: BorderRadius.circular(SRadii.max),
             ),
           ),
@@ -67,7 +67,7 @@ class _SBottomSheetNotScrollable extends SBottomSheet {
       child: Container(
         padding: EdgeInsets.only(right: SSpacings.s16, left: SSpacings.s16, bottom: SSpacings.s32),
         decoration: BoxDecoration(
-          color: context.theme.bgColors.primary,
+          color: context.theme.colors.bgColors.primary,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(SRadii.s16),
             topRight: Radius.circular(SRadii.s16),
@@ -104,7 +104,7 @@ class _SBottomSheetScrollable extends SBottomSheet {
       builder: (final context, final scrollController) => Container(
         padding: EdgeInsets.only(right: SSpacings.s16, left: SSpacings.s16, bottom: SSpacings.s32),
         decoration: BoxDecoration(
-          color: context.theme.bgColors.primary,
+          color: context.theme.colors.bgColors.primary,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(SRadii.s16),
             topRight: Radius.circular(SRadii.s16),

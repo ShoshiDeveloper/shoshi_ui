@@ -12,23 +12,20 @@ class STag extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final contentColors = switch (variant) {
-      STagVariant.info => context.theme.textColors.primary,
-      STagVariant.warning => context.theme.serviceColors.warning,
-      STagVariant.danger => context.theme.serviceColors.danger,
-      STagVariant.success => context.theme.serviceColors.success,
+      STagVariant.info => context.theme.colors.textColors.primary,
+      STagVariant.warning => context.theme.colors.serviceColors.warning,
+      STagVariant.danger => context.theme.colors.serviceColors.danger,
+      STagVariant.success => context.theme.colors.serviceColors.success,
     };
 
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: SSpacings.s08,
-        vertical: SSpacings.s02,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: SSpacings.s08, vertical: SSpacings.s02),
       decoration: BoxDecoration(
         color: switch (variant) {
-          STagVariant.info => context.theme.bgColors.secondary,
-          STagVariant.warning => context.theme.serviceColors.warning.light,
-          STagVariant.danger => context.theme.serviceColors.danger.light,
-          STagVariant.success => context.theme.serviceColors.success.light,
+          STagVariant.info => context.theme.colors.bgColors.secondary,
+          STagVariant.warning => context.theme.colors.serviceColors.warning.light,
+          STagVariant.danger => context.theme.colors.serviceColors.danger.light,
+          STagVariant.success => context.theme.colors.serviceColors.success.light,
         },
         borderRadius: BorderRadius.circular(SRadii.max),
       ),
@@ -37,17 +34,10 @@ class STag extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         spacing: SSpacings.s04,
         children: [
-          SIcon.filled(
-            icon: SIconsFilled.dangerTriangle,
-            color: contentColors,
-            size: 16,
-          ),
+          SIcon.filled(icon: SIconsFilled.dangerTriangle, color: contentColors, size: 16),
           Text(
             text,
-            style: context.theme.textStyles.body2(
-              weight: FontWeight.w500,
-              color: contentColors,
-            ),
+            style: context.theme.textStyles.body2(weight: FontWeight.w500, color: contentColors),
           ),
         ],
       ),

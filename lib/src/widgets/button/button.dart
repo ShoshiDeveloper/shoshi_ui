@@ -43,7 +43,7 @@ class SButton extends StatelessWidget {
   Widget build(final BuildContext context) {
     if (isLoading) return SSkeleton(width: 120);
 
-    final style = context.theme.buttonStyle;
+    final style = context.theme.widgets.buttonStyle;
 
     return SInteractionBuilder(
       onTap: onTap,
@@ -53,6 +53,7 @@ class SButton extends StatelessWidget {
           enabled: style.enabled,
           pressed: style.pressed,
           disabled: style.disabled,
+          hovered: style.hovered,
         );
 
         if (variant == SButtonVariant.text) {

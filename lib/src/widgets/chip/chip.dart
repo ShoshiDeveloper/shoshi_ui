@@ -37,19 +37,14 @@ class SChip extends StatelessWidget {
     return GestureDetector(
       onTap: () => onChanged?.call(!isSelected),
       child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: SSpacings.s08,
-          vertical: SSpacings.s04,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: SSpacings.s08, vertical: SSpacings.s04),
         decoration: BoxDecoration(
           color: isSelected
               ? switch (selectedVariant) {
-                  SChipSelectedVariant.monochrome =>
-                    context.theme.textColors.primary,
-                  SChipSelectedVariant.brand =>
-                    context.theme.serviceColors.primary,
+                  SChipSelectedVariant.monochrome => context.theme.colors.textColors.primary,
+                  SChipSelectedVariant.brand => context.theme.colors.serviceColors.primary,
                 }
-              : context.theme.bgColors.secondary,
+              : context.theme.colors.bgColors.secondary,
           borderRadius: BorderRadius.circular(SRadii.max),
         ),
         child: Row(
@@ -61,8 +56,8 @@ class SChip extends StatelessWidget {
               SIcon(
                 icon: icon!,
                 color: isSelected
-                    ? context.theme.textColors.inversePrimary
-                    : context.theme.textColors.primary,
+                    ? context.theme.colors.textColors.inversePrimary
+                    : context.theme.colors.textColors.primary,
                 size: 16,
               ),
             Text(
@@ -70,8 +65,8 @@ class SChip extends StatelessWidget {
               style: context.theme.textStyles.body2(
                 weight: FontWeight.w500,
                 color: isSelected
-                    ? context.theme.textColors.inversePrimary
-                    : context.theme.textColors.primary,
+                    ? context.theme.colors.textColors.inversePrimary
+                    : context.theme.colors.textColors.primary,
               ),
             ),
           ],
@@ -95,9 +90,8 @@ class SChipGroup extends StatelessWidget {
       runSpacing: SSpacings.s04,
       children: children
           .mapIndexed(
-            (final idx, final e) => e.copyWith(
-              onChanged: (final isSelected) => onChanged?.call(idx, isSelected),
-            ),
+            (final idx, final e) =>
+                e.copyWith(onChanged: (final isSelected) => onChanged?.call(idx, isSelected)),
           )
           .toList(),
     );
