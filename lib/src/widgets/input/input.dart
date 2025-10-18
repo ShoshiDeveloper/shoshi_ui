@@ -150,7 +150,7 @@ class _SInputState extends State<SInput> {
                     field.errorText!,
                     style: STheme.of(
                       context,
-                    ).styles.caption(color: context.theme.colors.service.danger),
+                    ).styles.interlinear(color: context.theme.colors.service.danger),
                   ),
               ],
             ),
