@@ -9,9 +9,11 @@ import 'package:example/demo/pages/chip_demo.dart';
 import 'package:example/demo/pages/input_deno.dart';
 import 'package:example/demo/pages/segmented_list_demo.dart';
 import 'package:example/demo/pages/selector_demo.dart';
+import 'package:example/demo/pages/spinner_demo.dart';
 import 'package:example/demo/pages/tag_demo.dart';
 import 'package:example/demo/pages/toggle_demo.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shoshi_ui/shoshi_ui.dart';
 
 void main() {
@@ -56,6 +58,7 @@ class _HomePageState extends State<HomePage> {
     'Tag': TagDemo(),
     'LoginDemo': LoginDemo(),
     'Info About Home Demo': InfoAboutHomeDemo(),
+    'Spinner': SpinnerDemo(),
   };
 
   @override
@@ -75,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                       Expanded(
                         child: Text(
                           e.key,
-                          style: context.theme.textStyles.body(weight: FontWeight.w500),
+                          style: context.theme.styles.body(weight: FontWeight.w500),
                         ),
                       ),
                       Icon(Icons.chevron_right_rounded),

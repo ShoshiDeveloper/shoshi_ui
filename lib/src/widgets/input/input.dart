@@ -52,9 +52,9 @@ class _SInputState extends State<SInput> {
 
   @override
   Widget build(final BuildContext context) {
-    final serviceColors = context.theme.colors.serviceColors;
-    final bgColors = context.theme.colors.bgColors;
-    final textColors = context.theme.colors.textColors;
+    final serviceColors = context.theme.colors.service;
+    final bgColors = context.theme.colors.background;
+    final textColors = context.theme.colors.text;
 
     return IgnorePointer(
       ignoring: widget.isDisabled,
@@ -97,7 +97,7 @@ class _SInputState extends State<SInput> {
                                                 !focus.hasFocus
                                             ? Text(
                                                 widget.hint!,
-                                                style: context.theme.textStyles.body(
+                                                style: context.theme.styles.body(
                                                   color: textColors.secondary,
                                                 ),
                                               )
@@ -119,10 +119,8 @@ class _SInputState extends State<SInput> {
                                       focusNode: focus,
                                       minLines: widget.minLines,
                                       maxLines: widget.maxLines,
-                                      style: context.theme.textStyles.body(
-                                        color: textColors.primary,
-                                      ),
-                                      cursorColor: context.theme.colors.textColors.primary,
+                                      style: context.theme.styles.body(color: textColors.primary),
+                                      cursorColor: context.theme.colors.text.primary,
                                       backgroundCursorColor: Colors.transparent,
                                       scrollPadding: EdgeInsets.zero,
                                       obscureText: widget.obscureText,
@@ -152,7 +150,7 @@ class _SInputState extends State<SInput> {
                     field.errorText!,
                     style: STheme.of(
                       context,
-                    ).textStyles.caption(color: context.theme.colors.serviceColors.danger),
+                    ).styles.caption(color: context.theme.colors.service.danger),
                   ),
               ],
             ),

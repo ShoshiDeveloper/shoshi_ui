@@ -47,10 +47,7 @@ class SIcon extends StatelessWidget {
       width: size,
       child: SvgPicture.string(
         svgString,
-        colorFilter: ColorFilter.mode(
-          color ?? context.theme.colors.textColors.primary,
-          BlendMode.srcIn,
-        ),
+        colorFilter: ColorFilter.mode(color ?? context.theme.colors.text.primary, BlendMode.srcIn),
         height: size,
         width: size,
       ),

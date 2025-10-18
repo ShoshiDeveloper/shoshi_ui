@@ -12,7 +12,7 @@ class SScaffold extends StatelessWidget {
   Widget build(final BuildContext context) {
     return Scaffold(
       appBar: appBar,
-      backgroundColor: context.theme.colors.bgColors.primary,
+      backgroundColor: context.theme.colors.background.primary,
       body: SafeArea(
         child: Padding(padding: padding ?? EdgeInsets.all(SSpacings.s16), child: body),
       ),

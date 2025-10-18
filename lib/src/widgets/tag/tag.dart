@@ -12,20 +12,20 @@ class STag extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final contentColors = switch (variant) {
-      STagVariant.info => context.theme.colors.textColors.primary,
-      STagVariant.warning => context.theme.colors.serviceColors.warning,
-      STagVariant.danger => context.theme.colors.serviceColors.danger,
-      STagVariant.success => context.theme.colors.serviceColors.success,
+      STagVariant.info => context.theme.colors.text.primary,
+      STagVariant.warning => context.theme.colors.service.warning,
+      STagVariant.danger => context.theme.colors.service.danger,
+      STagVariant.success => context.theme.colors.service.success,
     };
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: SSpacings.s08, vertical: SSpacings.s02),
       decoration: BoxDecoration(
         color: switch (variant) {
-          STagVariant.info => context.theme.colors.bgColors.secondary,
-          STagVariant.warning => context.theme.colors.serviceColors.warning.light,
-          STagVariant.danger => context.theme.colors.serviceColors.danger.light,
-          STagVariant.success => context.theme.colors.serviceColors.success.light,
+          STagVariant.info => context.theme.colors.background.secondary,
+          STagVariant.warning => context.theme.colors.service.warning.light,
+          STagVariant.danger => context.theme.colors.service.danger.light,
+          STagVariant.success => context.theme.colors.service.success.light,
         },
         borderRadius: BorderRadius.circular(SRadii.max),
       ),
@@ -37,7 +37,7 @@ class STag extends StatelessWidget {
           SIcon.filled(icon: SIconsFilled.dangerTriangle, color: contentColors, size: 16),
           Text(
             text,
-            style: context.theme.textStyles.body2(weight: FontWeight.w500, color: contentColors),
+            style: context.theme.styles.body2(weight: FontWeight.w500, color: contentColors),
           ),
         ],
       ),

@@ -26,7 +26,7 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
     return SafeArea(
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-        color: context.theme.colors.bgColors.primary,
+        color: context.theme.colors.background.primary,
         child: Row(
           spacing: SSpacings.s08,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,7 +45,7 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
               Center(
                 child: Text(
                   title!,
-                  style: context.theme.textStyles.t1(weight: FontWeight.w600),
+                  style: context.theme.styles.t1(weight: FontWeight.w600),
                   textAlign: TextAlign.center,
                 ),
               ),

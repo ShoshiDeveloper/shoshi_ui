@@ -20,7 +20,7 @@ class SSgmentedListItem extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: context.theme.textStyles.body(),
+                style: context.theme.styles.body(),
                 overflow: TextOverflow.ellipsis,
               ),
             ),

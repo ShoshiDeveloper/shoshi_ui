@@ -13,7 +13,7 @@ class DemoHeader extends StatelessWidget {
       padding: const EdgeInsets.only(top: 16.0),
       child: Text(
         "${number != null ? "[$number]" : ''} $title",
-        style: STheme.of(context).textStyles.h1(),
+        style: STheme.of(context).styles.h1(),
       ),
     );
   }

@@ -9,22 +9,23 @@ class SThemeData {
     final SToggleStyle? toggleStyle,
   }) {
     final currColors = colors ?? SThemeColors();
-    final currTextStyles = textStyles ?? STextStyles.defaults(currColors.serviceColors.primary);
+    final currTextStyles = textStyles ?? STextStyles.defaults(currColors.text.primary);
 
     final currWidgets = SThemeWidgets(
-      serviceColors: currColors.serviceColors,
-      textColors: currColors.textColors,
+      serviceColors: currColors.service,
+      textColors: currColors.text,
       button: buttonStyle,
       toggleStyle: toggleStyle,
     );
 
-    return SThemeData._(colors: currColors, textStyles: currTextStyles, widgets: currWidgets);
+    return SThemeData._(colors: currColors, styles: currTextStyles, widgets: currWidgets);
   }
 
-  SThemeData._({required this.colors, required this.textStyles, required this.widgets});
+  SThemeData._({required this.colors, required this.styles, required this.widgets});
 
   final SThemeColors colors;
-  final STextStyles textStyles;
+
+  final STextStyles styles;
 
   final SThemeWidgets widgets;
 }
@@ -36,22 +37,26 @@ class SThemeWidgets {
 
     final SButtonStyle? button,
     final SToggleStyle? toggleStyle,
-  }) : buttonStyle = button ?? SButtonStyle(),
-       toggleStyle = SToggleStyle.defaults(serviceColors ?? SServiceColors());
-  final SButtonStyle buttonStyle;
-  final SToggleStyle toggleStyle;
+  }) : button = button ?? SButtonStyle(),
+       toggle = SToggleStyle.defaults(serviceColors ?? SServiceColors());
+
+  final SButtonStyle button;
+
+  final SToggleStyle toggle;
 }
 
 class SThemeColors {
   SThemeColors({
     final SServiceColors? serviceColors,
-    final SBGColors? bgColors,
     final STextColors? textColors,
-  }) : serviceColors = serviceColors ?? SServiceColors(),
-       bgColors = bgColors ?? SBGColors(),
-       textColors = textColors ?? STextColors();
+    final SBGColors? bgColors,
+  }) : service = serviceColors ?? SServiceColors(),
+       text = textColors ?? STextColors(),
+       background = bgColors ?? SBGColors();
 
-  final SServiceColors serviceColors;
-  final SBGColors bgColors;
-  final STextColors textColors;
+  final SServiceColors service;
+
+  final STextColors text;
+
+  final SBGColors background;
 }

@@ -20,7 +20,7 @@ class SToggle extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    late final style = context.theme.widgets.toggleStyle;
+    late final style = context.theme.widgets.toggle;
 
     return FormField<bool>(
       validator: validator,

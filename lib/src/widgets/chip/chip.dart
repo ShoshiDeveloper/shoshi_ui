@@ -41,10 +41,10 @@ class SChip extends StatelessWidget {
         decoration: BoxDecoration(
           color: isSelected
               ? switch (selectedVariant) {
-                  SChipSelectedVariant.monochrome => context.theme.colors.textColors.primary,
-                  SChipSelectedVariant.brand => context.theme.colors.serviceColors.primary,
+                  SChipSelectedVariant.monochrome => context.theme.colors.text.primary,
+                  SChipSelectedVariant.brand => context.theme.colors.service.primary,
                 }
-              : context.theme.colors.bgColors.secondary,
+              : context.theme.colors.background.secondary,
           borderRadius: BorderRadius.circular(SRadii.max),
         ),
         child: Row(
@@ -56,17 +56,17 @@ class SChip extends StatelessWidget {
               SIcon(
                 icon: icon!,
                 color: isSelected
-                    ? context.theme.colors.textColors.inversePrimary
-                    : context.theme.colors.textColors.primary,
+                    ? context.theme.colors.text.inversePrimary
+                    : context.theme.colors.text.primary,
                 size: 16,
               ),
             Text(
               text,
-              style: context.theme.textStyles.body2(
+              style: context.theme.styles.body2(
                 weight: FontWeight.w500,
                 color: isSelected
-                    ? context.theme.colors.textColors.inversePrimary
-                    : context.theme.colors.textColors.primary,
+                    ? context.theme.colors.text.inversePrimary
+                    : context.theme.colors.text.primary,
               ),
             ),
           ],

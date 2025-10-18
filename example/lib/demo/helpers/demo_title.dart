@@ -11,7 +11,7 @@ class DemoTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       "${number != null ? "[$number]" : ''} $title",
-      style: STheme.of(context).textStyles.t2(),
+      style: STheme.of(context).styles.t2(),
     );
   }
 }

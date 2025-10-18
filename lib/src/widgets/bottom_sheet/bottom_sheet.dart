@@ -19,12 +19,11 @@ class SBottomSheetHeader extends StatelessWidget {
             width: 32,
             height: 4,
             decoration: BoxDecoration(
-              color: context.theme.colors.textColors.tertiary,
+              color: context.theme.colors.text.tertiary,
               borderRadius: BorderRadius.circular(SRadii.max),
             ),
           ),
-          if (title != null)
-            Text(title!, style: context.theme.textStyles.t1(weight: FontWeight.w600)),
+          if (title != null) Text(title!, style: context.theme.styles.t1(weight: FontWeight.w600)),
         ],
       ),
     );
@@ -62,32 +61,38 @@ class _SBottomSheetNotScrollable extends SBottomSheet {
 
   @override
   Widget build(final BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-      child: Container(
-        padding: EdgeInsets.only(right: SSpacings.s16, left: SSpacings.s16, bottom: SSpacings.s32),
-        decoration: BoxDecoration(
-          color: context.theme.colors.bgColors.primary,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(SRadii.s16),
-            topRight: Radius.circular(SRadii.s16),
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        child: Container(
+          padding: EdgeInsets.only(
+            right: SSpacings.s16,
+            left: SSpacings.s16,
+            bottom: SSpacings.s32,
           ),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          spacing: SSpacings.s16,
-          children: [
-            header,
-            ListView.separated(
-              padding: EdgeInsets.zero,
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: children.length,
-              separatorBuilder: (_, _) => SizedBox(height: SSpacings.s08),
-              itemBuilder: (final context, final index) => children[index],
+          decoration: BoxDecoration(
+            color: context.theme.colors.background.primary,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(SRadii.s16),
+              topRight: Radius.circular(SRadii.s16),
             ),
-            ?bottom,
-          ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            spacing: SSpacings.s16,
+            children: [
+              header,
+              ListView.separated(
+                padding: EdgeInsets.zero,
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: children.length,
+                separatorBuilder: (_, _) => SizedBox(height: SSpacings.s08),
+                itemBuilder: (final context, final index) => children[index],
+              ),
+              ?bottom,
+            ],
+          ),
         ),
       ),
     );
@@ -104,7 +109,7 @@ class _SBottomSheetScrollable extends SBottomSheet {
       builder: (final context, final scrollController) => Container(
         padding: EdgeInsets.only(right: SSpacings.s16, left: SSpacings.s16, bottom: SSpacings.s32),
         decoration: BoxDecoration(
-          color: context.theme.colors.bgColors.primary,
+          color: context.theme.colors.background.primary,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(SRadii.s16),
             topRight: Radius.circular(SRadii.s16),

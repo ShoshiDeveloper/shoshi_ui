@@ -21,16 +21,16 @@ class SCheckbox extends StatelessWidget {
           width: 24,
           padding: EdgeInsets.all(SSpacings.s04),
           decoration: BoxDecoration(
-            color: value ? context.theme.colors.serviceColors.primary : null,
+            color: value ? context.theme.colors.service.primary : null,
             borderRadius: BorderRadius.circular(SRadii.max),
             border: !value
-                ? Border.all(color: context.theme.colors.textColors.secondary, width: 2)
+                ? Border.all(color: context.theme.colors.text.secondary, width: 2)
                 : null,
           ),
           child: value
               ? SIcon.outlined(
                   icon: SIconsOutlined.check,
-                  color: context.theme.colors.textColors.inversePrimary,
+                  color: context.theme.colors.text.inversePrimary,
                 )
               : null,
         ),

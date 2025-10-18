@@ -33,6 +33,7 @@ export 'src/widgets/segmented_list/segmented_list.dart';
 export 'src/widgets/segmented_list/segmented_list_item.dart';
 export 'src/widgets/selector.dart';
 export 'src/widgets/skeleton.dart';
+export 'src/widgets/spinner/spinner.dart';
 export 'src/widgets/tag/tag.dart';
 export 'src/widgets/toggle/toggle.dart';
 export 'src/widgets/toggle/toggle_style.dart';

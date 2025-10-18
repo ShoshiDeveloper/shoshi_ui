@@ -44,10 +44,7 @@ class _InfoAboutHomeDemoState extends State<InfoAboutHomeDemo> {
                       Expanded(child: SInput(hint: 'Appartement №')),
                     ],
                   ),
-                  Text(
-                    'More about the building',
-                    style: theme.textStyles.t1(weight: FontWeight.w500),
-                  ),
+                  Text('More about the building', style: theme.styles.t1(weight: FontWeight.w500)),
 
                   Row(
                     spacing: SSpacings.s08,

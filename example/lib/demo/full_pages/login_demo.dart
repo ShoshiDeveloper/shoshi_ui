@@ -20,7 +20,7 @@ class _LoginDemoState extends State<LoginDemo> {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: SSpacings.s24,
         children: [
-          Text('Welcome', style: theme.textStyles.h1(weight: FontWeight.w700)),
+          Text('Welcome', style: theme.styles.h1(weight: FontWeight.w700)),
           Form(
             key: formKey,
             onChanged: () {
