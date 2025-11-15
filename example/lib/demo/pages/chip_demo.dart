@@ -39,19 +39,14 @@ class _ChipDemoState extends State<ChipDemo> {
             onChanged: (value) => setState(() => isSelected = value),
           ),
         ),
-
         DemoSection(
           title: DemoTitle('Chip group'),
           demo: SChipGroup(
-            onChanged: (index, isSelected) =>
-                setState(() => chips[index] = isSelected),
+            onChanged: (index, isSelected) => setState(() => chips[index] = isSelected),
             children: List.generate(
               chips.length,
-              (index) => SChip(
-                isSelected: chips[index],
-                icon: SIconsFilled.shieldWarning,
-                text: '$index chip',
-              ),
+              (index) =>
+                  SChip(isSelected: chips[index], icon: SIcons.shieldWarning, text: '$index chip'),
             ),
           ),
         ),

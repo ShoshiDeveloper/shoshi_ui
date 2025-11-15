@@ -7,6 +7,7 @@ import 'package:example/demo/pages/bottom_sheet_demo.dart';
 import 'package:example/demo/pages/button_demo.dart';
 import 'package:example/demo/pages/chip_demo.dart';
 import 'package:example/demo/pages/input_deno.dart';
+import 'package:example/demo/pages/page_indicator_demo.dart';
 import 'package:example/demo/pages/segmented_list_demo.dart';
 import 'package:example/demo/pages/selector_demo.dart';
 import 'package:example/demo/pages/spinner_demo.dart';
@@ -59,6 +60,7 @@ class _HomePageState extends State<HomePage> {
     'LoginDemo': LoginDemo(),
     'Info About Home Demo': InfoAboutHomeDemo(),
     'Spinner': SpinnerDemo(),
+    'Page indicator': PageIndicatorDemo(),
   };
 
   @override

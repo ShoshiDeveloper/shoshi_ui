@@ -25,10 +25,7 @@ class _SegmentedListDemoState extends State<SegmentedListDemo> {
         SSegmentedList(
           children: [
             SSgmentedListItem(title: 'Label'),
-            SSgmentedListItem(
-              title: 'Go to next',
-              suffix: SSgmentedListItemSuffix.push(),
-            ),
+            SSgmentedListItem(title: 'Go to next', suffix: SSgmentedListItemSuffix.push()),
             SSgmentedListItem(
               title: 'Select variant',
               suffix: SSgmentedListItemSuffix.selector(
@@ -61,6 +58,11 @@ class _SegmentedListDemoState extends State<SegmentedListDemo> {
                 value: secondC,
                 onChanged: (value) => setState(() => secondC = value),
               ),
+            ),
+
+            SSgmentedListItem(
+              title: 'Text',
+              suffix: SSgmentedListItemSuffix.text(text: 'Text'),
             ),
           ],
         ),

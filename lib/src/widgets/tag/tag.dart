@@ -34,7 +34,11 @@ class STag extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         spacing: SSpacings.s04,
         children: [
-          SIcon.filled(icon: SIconsFilled.dangerTriangle, color: contentColors, size: 16),
+          SIcon(
+            icon: SIconVariant.package(icon: SIcons.dangerTriangle, style: SIconStyles.filled),
+            color: contentColors,
+            size: 16,
+          ),
           Text(
             text,
             style: context.theme.styles.body2(weight: FontWeight.w500, color: contentColors),

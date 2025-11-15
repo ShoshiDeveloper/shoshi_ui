@@ -47,7 +47,7 @@ class SSelector<T> extends StatelessWidget {
                         title: stringify?.call(e) ?? e.toString(),
                         suffix: value == e
                             ? SSgmentedListItemSuffix.icon(
-                                icon: SIconsOutlined.check,
+                                icon: SIcons.check,
                                 color: context.theme.colors.service.primary,
                               )
                             : null,
@@ -73,7 +73,7 @@ class SSelector<T> extends StatelessWidget {
                   stringify?.call(value) ?? value.toString(),
                   style: context.theme.styles.body(color: context.theme.colors.text.secondary),
                 ),
-                SIcon(icon: SIconsOutlined.downChevron, size: 16),
+                SIcon(icon: SIconVariant.package(icon: SIcons.downChevron), size: 16),
               ],
             ),
           ),

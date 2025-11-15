@@ -3,7 +3,7 @@ import 'package:shoshi_ui/shoshi_ui.dart';
 
 class SAppBarTrailing {
   const SAppBarTrailing({required this.icon, this.onTap});
-  final SIconData icon;
+  final SIcons icon;
   final VoidCallback? onTap;
 }
 
@@ -14,7 +14,7 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
     : onTapLeading = null,
       isPop = true;
 
-  final SIconData? leading;
+  final SIcons? leading;
   final VoidCallback? onTapLeading;
   final String? title;
   final List<SAppBarTrailing>? trailing;
@@ -37,7 +37,7 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: leading != null || isPop
                   ? GestureDetector(
                       onTap: isPop ? context.pop : onTapLeading,
-                      child: SIcon(icon: leading ?? SIconsOutlined.leftChevron),
+                      child: SIcon(icon: SIconVariant.package(icon: leading ?? SIcons.leftChevron)),
                     )
                   : null,
             ),
@@ -59,7 +59,7 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
                           .map(
                             (final e) => GestureDetector(
                               onTap: e.onTap,
-                              child: SIcon(icon: e.icon),
+                              child: SIcon(icon: SIconVariant.package(icon: e.icon)),
                             ),
                           )
                           .toList(),

@@ -21,11 +21,25 @@ enum SAlertStatus {
     SAlertStatus.success => onSuccess.call(),
   };
 
-  SIconData get defIcon => switch (this) {
-    SAlertStatus.info => SIconsOutlined.check,
-    SAlertStatus.danger => SIconsFilled.dangerTriangle,
-    SAlertStatus.warning => SIconsFilled.shieldWarning,
-    SAlertStatus.success => SIconsFilled.success,
+  SIconVariant get defIcon => switch (this) {
+    SAlertStatus.info => SIconVariant.package(icon: SIcons.check),
+    SAlertStatus.danger => SIconVariant.package(
+      icon: SIcons.dangerTriangle,
+      style: SIconStyles.filled,
+    ),
+    SAlertStatus.warning => SIconVariant.package(
+      icon: SIcons.shieldWarning,
+      style: SIconStyles.filled,
+    ),
+    SAlertStatus.success => SIconVariant.package(icon: SIcons.check, style: SIconStyles.filled),
+  };
+
+  ///Костыль
+  SIconStyles get defIconStyles => switch (this) {
+    SAlertStatus.info => SIconStyles.outlined,
+    SAlertStatus.danger => SIconStyles.filled,
+    SAlertStatus.warning => SIconStyles.filled,
+    SAlertStatus.success => SIconStyles.filled,
   };
 }
 
@@ -34,7 +48,7 @@ class SAlert extends StatelessWidget {
 
   final String text;
   final SAlertStatus status;
-  final SIconData? icon;
+  final SIconVariant? icon;
   final bool hasBorder;
 
   @override

@@ -28,8 +28,8 @@ class SCheckbox extends StatelessWidget {
                 : null,
           ),
           child: value
-              ? SIcon.outlined(
-                  icon: SIconsOutlined.check,
+              ? SIcon(
+                  icon: SIconVariant.package(icon: SIcons.check),
                   color: context.theme.colors.text.inversePrimary,
                 )
               : null,

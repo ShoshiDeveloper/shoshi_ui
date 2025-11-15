@@ -20,8 +20,8 @@ class SInput extends StatefulWidget {
 
   final TextEditingController? controller;
 
-  final SIconData? prefix;
-  final SIconData? suffix;
+  final SIcons? prefix;
+  final SIcons? suffix;
   final VoidCallback? onTapSuffix;
   final String? hint;
 
@@ -82,7 +82,11 @@ class _SInputState extends State<SInput> {
                           spacing: SSpacings.s08,
                           children: [
                             if (widget.prefix != null)
-                              SIcon(icon: widget.prefix!, color: textColors.primary, size: 16),
+                              SIcon(
+                                icon: SIconVariant.package(icon: widget.prefix),
+                                color: textColors.primary,
+                                size: 16,
+                              ),
                             Expanded(
                               child: Row(
                                 children: [
@@ -140,7 +144,11 @@ class _SInputState extends State<SInput> {
                       if (widget.suffix != null)
                         GestureDetector(
                           onTap: widget.onTapSuffix,
-                          child: SIcon(icon: widget.suffix!, color: textColors.primary, size: 16),
+                          child: SIcon(
+                            icon: SIconVariant.package(icon: widget.suffix),
+                            color: textColors.primary,
+                            size: 16,
+                          ),
                         ),
                     ],
                   ),

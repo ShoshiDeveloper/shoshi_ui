@@ -18,7 +18,7 @@ class AlertDemo extends StatelessWidget {
         DemoHeader('Default'),
         DemoSection(
           title: DemoTitle('Info', number: 1),
-          demo: SAlert(text, SAlertStatus.info, icon: SIconsOutlined.check),
+          demo: SAlert(text, SAlertStatus.info, icon: SIconVariant.package(icon: SIcons.check)),
         ),
         DemoSection(
           title: DemoTitle('Warning', number: 1),
@@ -26,7 +26,11 @@ class AlertDemo extends StatelessWidget {
         ),
         DemoSection(
           title: DemoTitle('Danger', number: 1),
-          demo: SAlert(text, SAlertStatus.danger, icon: SIconsFilled.dangerTriangle),
+          demo: SAlert(
+            text,
+            SAlertStatus.danger,
+            icon: SIconVariant.package(icon: SIcons.dangerTriangle, style: SIconStyles.filled),
+          ),
         ),
         DemoSection(
           title: DemoTitle('Success', number: 1),

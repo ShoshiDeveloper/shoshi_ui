@@ -17,7 +17,7 @@ class SChip extends StatelessWidget {
   final bool isSelected;
   final SChipSelectedVariant selectedVariant;
   final String text;
-  final SIconData? icon;
+  final SIcons? icon;
 
   final ValueChanged<bool>? onChanged;
 
@@ -54,7 +54,7 @@ class SChip extends StatelessWidget {
           children: [
             if (icon != null)
               SIcon(
-                icon: icon!,
+                icon: SIconVariant.package(icon: icon),
                 color: isSelected
                     ? context.theme.colors.text.inversePrimary
                     : context.theme.colors.text.primary,

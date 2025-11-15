@@ -65,8 +65,10 @@ sealed class SSgmentedListItemSuffix extends StatelessWidget {
     title: title,
   );
 
-  static SSgmentedListItemSuffix icon({required final SIconData icon, final Color? color}) =>
+  static SSgmentedListItemSuffix icon({required final SIcons icon, final Color? color}) =>
       _SLISuffixIcon(icon: icon, color: color);
+
+  static SSgmentedListItemSuffix text({required final String text}) => _SLISuffixText(text: text);
 }
 
 final class _SLISuffixToggle extends SSgmentedListItemSuffix {
@@ -91,7 +93,7 @@ final class _SLISuffixPush extends SSgmentedListItemSuffix {
   const _SLISuffixPush() : super._();
 
   @override
-  Widget build(_) => SIcon(icon: SIconsOutlined.rightChevron, size: 16);
+  Widget build(_) => SIcon(icon: SIconVariant.package(icon: SIcons.rightChevron), size: 16);
 }
 
 final class _SLISuffixSelector<T> extends SSgmentedListItemSuffix {
@@ -138,9 +140,21 @@ final class _SLISuffixCheckbox extends SSgmentedListItemSuffix {
 final class _SLISuffixIcon extends SSgmentedListItemSuffix {
   const _SLISuffixIcon({required this.icon, this.color}) : super._();
 
-  final SIconData icon;
+  final SIcons icon;
   final Color? color;
 
   @override
-  Widget build(_) => SIcon(icon: icon, color: color);
+  Widget build(_) => SIcon(
+    icon: SIconVariant.package(icon: icon),
+    color: color,
+  );
+}
+
+final class _SLISuffixText extends SSgmentedListItemSuffix {
+  const _SLISuffixText({required this.text}) : super._();
+
+  final String text;
+
+  @override
+  Widget build(final BuildContext context) => Text(text, style: context.theme.styles.body2());
 }
