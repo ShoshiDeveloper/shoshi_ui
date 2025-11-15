@@ -5,7 +5,7 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 
 ## 🔗 Useful Links
 
-- [Documentation](https://shoshi.tech/shoshi_ui/documentation/)  
+<!-- - [Documentation](https://shoshi.tech/shoshi_ui/documentation/)   -->
 - [Pub.dev page](https://pub.dev/packages/shoshi_ui)  
 - [GitHub repository](https://github.com/shoshideveloper/shoshi_ui)  
 - [Issue tracker](https://github.com/shoshideveloper/shoshi_ui/issues)  
@@ -23,24 +23,25 @@ ShoshiUI provides a collection of customizable widgets that help accelerate deve
 - `Toggle`
 - `Input`
 - `Alert` - with four variants: info, danger, warning, success.
+- `PageIndicator`
+- `SegmentedList`
+- `Spinner`
+- `Tag`
+- `Toggle`
+- `Chip`
+- `AppBar`
+- `Checkbox`
+- `Selector`
+- `BottomSheet`
 
 ## 🔮 Upcoming Widgets
 
-- BottomSheet
-- Selector
-- Checkbox
-- SectionsList
 - Steps
 
 ## 📦 Installation
 
 ```yaml
 dependencies:
-  shoshi_ui: ^0.0.4
+  shoshi_ui: ^0.0.8
 ```
 
-<!-- ## 📝 Пример использования -->
-
-<!-- ## ❤️ Поддержка
-
-Если тебе нравится пакет — ⭐ на pub.dev будет отличной поддержкой. -->
